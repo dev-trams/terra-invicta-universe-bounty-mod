@@ -242,17 +242,6 @@ namespace UniverseBounty
         private static Action GainIncomeAction(InstantEffect effect, float amount) =>
             ApplyEffectAction(new TIEffectTemplate_GainIncome(effect, amount));
 
-        private static string GetShipBuildingTimeDescription()
-        {
-            var dreadnoughtTemplate = TemplateManager.Find<TIShipHullTemplate>("Dreadnought");
-            return string.Format(
-                ShipBuildTimeTemplate,
-                dreadnoughtTemplate.constructionTime_Days(1, Faction).ToString("###"),
-                dreadnoughtTemplate.constructionTime_Days(2, Faction).ToString("###"),
-                dreadnoughtTemplate.constructionTime_Days(3, Faction).ToString("###")
-            );
-        }
-
         private class ResourceButtonAction
         {
             public string Label { get; }
