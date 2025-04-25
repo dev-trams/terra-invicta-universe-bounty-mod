@@ -114,6 +114,26 @@ namespace UniverseBounty
                 new ResourceButtonAction("+ 100,000", AddToResourceAction(FactionResource.Fissiles, 100000)),
                 new ResourceButtonAction("+ 10/m", GainIncomeAction(InstantEffect.GainFissilesIncome, 10))
             );
+            UI.Space(10);
+
+            DrawResourceButtons(
+                "Antimatter",
+                new ResourceButtonAction("+ 1", AddToResourceAction(FactionResource.Antimatter, 1)),
+                new ResourceButtonAction("+ 5", AddToResourceAction(FactionResource.Antimatter, 5)),
+                new ResourceButtonAction("+ 10", AddToResourceAction(FactionResource.Antimatter, 10)),
+                new ResourceButtonAction("+ 20", AddToResourceAction(FactionResource.Antimatter, 20)),
+                new ResourceButtonAction("+ 1/m", GainIncomeAction(InstantEffect.GainAntimatterIncome, 1))
+            );
+            UI.Space(10);
+
+            DrawResourceButtons(
+                "Exotics",
+                new ResourceButtonAction("+ 10", AddToResourceAction(FactionResource.Exotics, 1)),
+                new ResourceButtonAction("+ 50", AddToResourceAction(FactionResource.Exotics, 50)),
+                new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Exotics, 100)),
+                new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Exotics, 1000)),
+                new ResourceButtonAction("+ 10/m", GainIncomeAction(InstantEffect.GainExoticsIncome, 10))
+            );
             UI.Space(30);
 
             DrawResourceButtons(

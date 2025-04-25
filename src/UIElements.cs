@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace UniverseBounty
 {
+    // ReSharper disable InconsistentNaming
     public static class UIElements
     {
         private static readonly GUIStyle HeaderStyle = new GUIStyle(UIStyles.AlignCenter)
