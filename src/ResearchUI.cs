@@ -18,11 +18,11 @@ namespace UniverseBounty
             {
                 DrawUniversalResearch();
 
-                UIElements.Header("GLOBAL RESEARCH");
+                UIElements.Header("전역 연구");
 
                 DrawGlobalResearch();
 
-                UIElements.Header("FACTION PROJECTS");
+                UIElements.Header("세력 프로젝트");
 
                 DrawFactionProjects();
             }
@@ -38,7 +38,7 @@ namespace UniverseBounty
         {
             using (UI.HorizontalScope())
             {
-                UI.Label("UNIVERSAL".orange().bold(), UI.MinWidth(350), UI.MaxWidth(350));
+                UI.Label("공용".orange().bold(), UI.MinWidth(350), UI.MaxWidth(350));
                 UI.Space(10);
                 DrawResearchButton(1000, UniversalResearchAction);
                 UI.Space(10);
@@ -100,7 +100,7 @@ namespace UniverseBounty
         private static void DrawResearchButton(float value, Action<float> action)
         {
             var actualValue = value / ResearchSpeedModifier;
-            var text = value > 0 ? $"+ {actualValue:N0}" : "COMPLETE";
+            var text = value > 0 ? $"+ {actualValue:N0}" : "완료";
             UI.ActionButton(text, () => action(actualValue), UIStyles.StandardButtonStyle, UI.MinWidth(150), UI.MaxWidth(150));
         }
 

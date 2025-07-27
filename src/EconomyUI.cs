@@ -11,7 +11,7 @@ namespace UniverseBounty
     public static class EconomyUI
     {
         private static TIFactionState? Faction;
-        private const string ShipBuildTimeTemplate = "It currently takes <b>{0}/{1}/{2}</b> days to build a dreadnought via space dock/shipyard/spaceworks.";
+        private const string ShipBuildTimeTemplate = "현재 드레드노트를 우주 도크/조선소/우주공장에서 건조하는 데 각각 <b>{0}/{1}/{2}</b> 일이 소요됩니다.";
         private const string ShipConstructionEffectName = "Effect_ShipConstructionTimeReduction10";
         private const string ControlPointBonusEffectName = "Effect_ControlPointMaintenanceBonus10";
 
@@ -21,10 +21,10 @@ namespace UniverseBounty
 
             using (UI.VerticalScope())
             {
-                UIElements.Header("RESOURCES");
+                UIElements.Header("자원");
                 DrawResources();
 
-                UIElements.Header("CONSTRUCTION");
+                UIElements.Header("건설");
                 DrawConstruction();
             }
         }
@@ -37,7 +37,7 @@ namespace UniverseBounty
         private static void DrawResources()
         {
             DrawResourceButtons(
-                "Money",
+                "자금",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Money, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Money, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.Money, 10000)),
@@ -47,7 +47,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Influence",
+                "영향력",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Influence, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Influence, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.Influence, 10000)),
@@ -57,7 +57,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Operations",
+                "작전",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Operations, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Operations, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.Operations, 10000)),
@@ -67,7 +67,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Boost",
+                "부스트",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Boost, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Boost, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.Boost, 10000)),
@@ -77,7 +77,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Water",
+                "물",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Water, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Water, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.Water, 10000)),
@@ -87,7 +87,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Metals",
+                "금속",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Metals, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Metals, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.Metals, 10000)),
@@ -97,7 +97,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Noble Metals",
+                "귀금속",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.NobleMetals, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.NobleMetals, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.NobleMetals, 10000)),
@@ -107,7 +107,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Fissiles",
+                "핵물질",
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Fissiles, 100)),
                 new ResourceButtonAction("+ 1,000", AddToResourceAction(FactionResource.Fissiles, 1000)),
                 new ResourceButtonAction("+ 10,000", AddToResourceAction(FactionResource.Fissiles, 10000)),
@@ -117,7 +117,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Antimatter",
+                "반물질",
                 new ResourceButtonAction("+ 1", AddToResourceAction(FactionResource.Antimatter, 1)),
                 new ResourceButtonAction("+ 5", AddToResourceAction(FactionResource.Antimatter, 5)),
                 new ResourceButtonAction("+ 10", AddToResourceAction(FactionResource.Antimatter, 10)),
@@ -127,7 +127,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Exotics",
+                "특수 자원",
                 new ResourceButtonAction("+ 10", AddToResourceAction(FactionResource.Exotics, 1)),
                 new ResourceButtonAction("+ 50", AddToResourceAction(FactionResource.Exotics, 50)),
                 new ResourceButtonAction("+ 100", AddToResourceAction(FactionResource.Exotics, 100)),
@@ -137,7 +137,7 @@ namespace UniverseBounty
             UI.Space(30);
 
             DrawResourceButtons(
-                "Mission Control",
+                "임무 통제",
                 new ResourceButtonAction("+ 1", GainIncomeAction(InstantEffect.GainMissionControl, 1)),
                 new ResourceButtonAction("+ 5", GainIncomeAction(InstantEffect.GainMissionControl, 5)),
                 new ResourceButtonAction("+ 10", GainIncomeAction(InstantEffect.GainMissionControl, 10)),
@@ -146,7 +146,7 @@ namespace UniverseBounty
             UI.Space(10);
 
             DrawResourceButtons(
-                "Control Points",
+                "통제점",
                 new ResourceButtonAction("+ 10", ApplyEffectAction(ControlPointBonusEffectName))
             );
         }
@@ -166,7 +166,7 @@ namespace UniverseBounty
 
             using (UI.HorizontalScope())
             {
-                UI.Label("STARSHIPS".orange().bold(), UI.MinWidth(220), UI.MaxWidth(220));
+                UI.Label("우주선".orange().bold(), UI.MinWidth(220), UI.MaxWidth(220));
                 UI.Space(10);
                 UI.ActionButton($"- {shipBuildingAmount}", () => ApplyEffectAction(effect), UIStyles.StandardButtonStyle,
                     UI.MinWidth(150), UI.MaxWidth(150));
@@ -177,11 +177,11 @@ namespace UniverseBounty
 
             using (UI.HorizontalScope())
             {
-                UI.Label("HAB MODULES".orange().bold(), UI.MinWidth(220), UI.MaxWidth(220));
+                UI.Label("거주 모듈".orange().bold(), UI.MinWidth(220), UI.MaxWidth(220));
                 UI.Space(10);
-                UI.ActionButton("COMPLETE", OnCompleteHabModulesAction, UIStyles.StandardButtonStyle, UI.MinWidth(150), UI.MaxWidth(150));
+                UI.ActionButton("완료", OnCompleteHabModulesAction, UIStyles.StandardButtonStyle, UI.MinWidth(150), UI.MaxWidth(150));
                 UI.Space(10);
-                UI.Label("Complete all hab modules under construction", UIStyles.Hint);
+                UI.Label("건설 중인 모든 거주 모듈을 완료합니다", UIStyles.Hint);
             }
 
             return;

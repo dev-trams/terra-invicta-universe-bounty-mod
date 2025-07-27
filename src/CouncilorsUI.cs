@@ -37,25 +37,25 @@ namespace UniverseBounty
         {
             using (UI.HorizontalScope())
             {
-                UI.Label("NAME".bold(), UI.MinWidth(249), UI.MaxWidth(249));
+                UI.Label("이름".bold(), UI.MinWidth(249), UI.MaxWidth(249));
                 UI.Space(10);
-                DrawAttributeHeader("AGE");
+                DrawAttributeHeader("나이");
                 UI.Space(10);
-                DrawAttributeHeader("PER");
+                DrawAttributeHeader("설득");
                 UI.Space(10);
-                DrawAttributeHeader("INV");
+                DrawAttributeHeader("조사");
                 UI.Space(10);
-                DrawAttributeHeader("ESP");
+                DrawAttributeHeader("첩보");
                 UI.Space(10);
-                DrawAttributeHeader("COM");
+                DrawAttributeHeader("지휘");
                 UI.Space(10);
-                DrawAttributeHeader("ADM");
+                DrawAttributeHeader("관리");
                 UI.Space(10);
-                DrawAttributeHeader("SCI");
+                DrawAttributeHeader("과학");
                 UI.Space(10);
-                DrawAttributeHeader("SEC");
+                DrawAttributeHeader("안보");
                 UI.Space(10);
-                DrawAttributeHeader("LOY");
+                DrawAttributeHeader("충성");
                 UI.Space(10);
             }
         }
@@ -92,7 +92,7 @@ namespace UniverseBounty
                     DrawCouncilorAttribute(councilor, CouncilorAttribute.Loyalty);
                     UI.Space(20);
                     UI.ActionButton(
-                        "+20 XP",
+                        "+20 경험치",
                         () =>
                         {
                             councilor.ChangeXP(20);
@@ -105,7 +105,7 @@ namespace UniverseBounty
 
                     var traitsGlyph = IsSelectedCouncilor(councilor) ? UI.DisclosureGlyphOn : UI.DisclosureGlyphOff;
                     UI.ActionButton(
-                        $"Traits {traitsGlyph}",
+                        $"특성 {traitsGlyph}",
                         () => { ToggleCouncilor(councilor); },
                         UI.MinWidth(100),
                         UI.MaxWidth(100)
