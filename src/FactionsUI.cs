@@ -52,15 +52,15 @@ namespace UniverseBounty
                 {
                     UI.Label(faction.displayName.ToUpper().orange().bold(), UI.MinWidth(300), UI.MaxWidth(300));
                     UI.Space(10);
-                    UI.ActionButton($"Projects {projectsGlyph}", () => ToggleFaction(SelectionMode.Projects, faction),
+                    UI.ActionButton($"프로젝트 {projectsGlyph}", () => ToggleFaction(SelectionMode.Projects, faction),
                         UI.MinWidth(300), UI.MaxWidth(300));
                     UI.Space(10);
-                    UI.ActionButton($"Organisations {organisationsGlyph}",
+                    UI.ActionButton($"조직 {organisationsGlyph}",
                         () => ToggleFaction(SelectionMode.Organisations, faction), UI.MinWidth(300), UI.MaxWidth(300));
                     UI.Space(10);
-                    UI.ActionButton("Reveal Intel", () => RevealIntel(faction), UI.MinWidth(300), UI.MaxWidth(300));
+                    UI.ActionButton("정보 공개", () => RevealIntel(faction), UI.MinWidth(300), UI.MaxWidth(300));
                     UI.Space(10);
-                    UI.ActionButton($"Reset Hate ({hate:N0})", () => ResetHate(faction), UI.MinWidth(300),
+                    UI.ActionButton($"혐오도 초기화 ({hate:N0})", () => ResetHate(faction), UI.MinWidth(300),
                         UI.MaxWidth(300));
                 }
 
@@ -83,7 +83,7 @@ namespace UniverseBounty
             {
                 UI.Label(faction.displayName.ToUpper().orange().bold(), UI.MinWidth(300), UI.MaxWidth(300));
                 UI.Space(10);
-                UI.ActionButton($"Reset Hate ({hate:N0})", () => ResetHate(faction), UI.MinWidth(300),
+                UI.ActionButton($"혐오도 초기화 ({hate:N0})", () => ResetHate(faction), UI.MinWidth(300),
                     UI.MaxWidth(300));
             }
         }
@@ -99,9 +99,9 @@ namespace UniverseBounty
                 UI.Space(10);
 
                 if (projects.IsEmpty())
-                    UI.Label("No projects found.", UIStyles.Hint, UI.AutoWidth());
+                    UI.Label("프로젝트가 없습니다.", UIStyles.Hint, UI.AutoWidth());
                 else
-                    UI.Label("Clicking a project will steal it and make it available for you to research.", UIStyles.Hint, UI.AutoWidth());
+                    UI.Label("프로젝트를 클릭하면 훔쳐서 연구 가능하게 됩니다.", UIStyles.Hint, UI.AutoWidth());
 
                 foreach (var chunk in projects)
                 {
@@ -136,9 +136,9 @@ namespace UniverseBounty
                 UI.Space(10);
 
                 if (organisations.IsEmpty())
-                    UI.Label("No organisations found.", UIStyles.Hint, UI.AutoWidth());
+                    UI.Label("조직이 없습니다.", UIStyles.Hint, UI.AutoWidth());
                 else
-                    UI.Label("Clicking an organisation will steal it and place it in your unassigned pool.", UIStyles.Hint, UI.AutoWidth());
+                    UI.Label("조직을 클릭하면 훔쳐서 미배정 풀에 넣습니다.", UIStyles.Hint, UI.AutoWidth());
 
                 foreach (var chunk in organisations)
                 {

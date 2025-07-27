@@ -14,10 +14,10 @@ namespace UniverseBounty
 
         private static readonly NamedAction[] Tabs =
         {
-            new NamedAction("ECONOMY", EconomyUI.OnGUI),
-            new NamedAction("RESEARCH", ResearchUI.OnGUI),
-            new NamedAction("FACTIONS", FactionsUI.OnGUI),
-            new NamedAction("COUNCILORS", CouncilorsUI.OnGUI)
+            new NamedAction("경제", EconomyUI.OnGUI),
+            new NamedAction("연구", ResearchUI.OnGUI),
+            new NamedAction("세력", FactionsUI.OnGUI),
+            new NamedAction("평의원", CouncilorsUI.OnGUI)
         };
 
         public static bool Load(UnityModManager.ModEntry entry)
